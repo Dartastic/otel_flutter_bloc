@@ -2,7 +2,7 @@ name: otel_flutter_bloc
 description: Flutter overlay for `otel_bloc`. Re-exports the
   core observer + semantics and pulls in `flutter_bloc` so Flutter
   apps add one dependency to get OTel coverage of every Bloc / Cubit.
-version: 0.1.0-beta.1
+version: 0.1.0-beta.2-wip
 repository: https://github.com/dartastic/otel_flutter_bloc
 homepage: https://dartastic.io
 
