@@ -2,7 +2,7 @@ name: otel_flutter_bloc
 description: Flutter overlay for `otel_bloc`. Re-exports the
   core observer + semantics and pulls in `flutter_bloc` so Flutter
   apps add one dependency to get OTel coverage of every Bloc / Cubit.
-version: 0.1.0-beta.2-wip
+version: 0.2.0-wip
 repository: https://github.com/dartastic/otel_flutter_bloc
 homepage: https://dartastic.io
 
@@ -11,21 +11,23 @@ environment:
   flutter: ">=3.10.0"
 
 dependencies:
-  otel_bloc: ^0.1.0-beta.1
-  dartastic_opentelemetry: ^1.1.0-beta.4
-  dartastic_opentelemetry_api: ^1.0.0-beta.6
+  dartastic_opentelemetry: ^1.1.0-beta.12
+  dartastic_opentelemetry_api: ^1.0.0-rc.1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
+  otel_bloc: ">=0.1.0-beta.1 <0.3.0"
 
 dev_dependencies:
-  pubspec_parse: ^1.5.0
-  pub_semver: ^2.0.0
   dart_flutter_team_lints: ^3.5.2
   flutter_test:
     sdk: flutter
+  pub_semver: ^2.0.0
+  pubspec_parse: ^1.5.0
 
 dependency_overrides:
-  # Use the local sibling while we iterate on both packages.
+  # Develop against the local sibling until otel_bloc 0.2.0 is
+  # published; releases go core-first. pub.dev ignores overrides, so
+  # the published package resolves the range above.
   otel_bloc:
     path: ../otel_bloc

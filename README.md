@@ -1,17 +1,18 @@
 # otel_flutter_bloc
 
-Flutter overlay for [`otel_bloc`](../otel_bloc/README.md).
+Flutter overlay for [`otel_bloc`](https://pub.dev/packages/otel_bloc).
 
 Re-exports the core `OTelBlocObserver` + `BlocSemantics` and pulls
 in `flutter_bloc` so Flutter apps add **one** dependency instead of
 managing `bloc` + `flutter_bloc` + `otel_bloc` separately.
 
 ```dart
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otel_flutter_bloc/otel_flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DOTel.initialize(serviceName: 'my-app');
+  await OTel.initialize(serviceName: 'my-app');
   Bloc.observer = OTelBlocObserver();
   runApp(const MyApp());
 }
@@ -22,7 +23,7 @@ void main() async {
 - **Flutter app using `flutter_bloc`** → use this package. One
   dependency for the observer + `flutter_bloc`.
 - **Pure-Dart `bloc` app (a server, CLI, isolate)** → use
-  [`otel_bloc`](../otel_bloc) directly. No
+  [`otel_bloc`](https://pub.dev/packages/otel_bloc) directly. No
   Flutter dependency.
 
 The runtime behavior is identical — the observer is the same class

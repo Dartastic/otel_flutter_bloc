@@ -5,7 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0-beta.2-wip]
+## [0.2.0-wip]
+
+### Changed
+
+- Dependency floors raised to `dartastic_opentelemetry ^1.1.0-beta.12`
+  and `dartastic_opentelemetry_api ^1.0.0-rc.1`, matching the core.
+- Core constraint widened to `otel_bloc >=0.1.0-beta.1 <0.3.0`: the
+  previous caret (`^0.1.0-beta.1`) excluded the core's 0.2.0 line,
+  so this overlay could never resolve the modernized-semconv core it
+  is developed against. The re-exported `OTelBlocObserver` +
+  `BlocSemantics` surface is source-compatible across the range.
+- `repository` URL corrected to the canonical `Dartastic` org casing
+  so pub.dev repository verification succeeds.
+- Docs: initialization snippets corrected to the SDK's
+  `OTel.initialize` entry point (and now show the `flutter_bloc`
+  import the snippet uses); links to the core package point at
+  pub.dev instead of repository-relative paths.
+
+### Added
+
+- Runnable `example/main.dart`: a counter-Cubit Flutter app with the
+  observer installed once at startup; every state change lands as a
+  `bloc.*` span.
 
 ## [0.1.0-beta.1] - 2026-05-16
 

@@ -11,11 +11,12 @@
 /// Install once at startup:
 ///
 /// ```dart
+/// import 'package:flutter_bloc/flutter_bloc.dart';
 /// import 'package:otel_flutter_bloc/otel_flutter_bloc.dart';
 ///
 /// void main() async {
 ///   WidgetsFlutterBinding.ensureInitialized();
-///   await DOTel.initialize(serviceName: 'my-app');
+///   await OTel.initialize(serviceName: 'my-app');
 ///   Bloc.observer = OTelBlocObserver();
 ///   runApp(const MyApp());
 /// }
